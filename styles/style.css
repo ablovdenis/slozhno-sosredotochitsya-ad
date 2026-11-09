@@ -2,4 +2,86 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  /* width: 100%; */
+  background-image: var(--page_background_image);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: var(--font-family);
+  font-size: var(--normal-font-size);
+}
+
+.header {
+  /* position: relative; */
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  align-items: center;
+  height: 100vh;
+  min-height: 668px;
+  padding: 10px;
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before {
+  position: absolute;
+  content: '';
+  left: 10px;
+  bottom: 10px;
+  width: 25.04px;
+  height: 25px;
+  border-left: 1px solid var(--color-of-borders-and-corners);
+  border-bottom: 1px solid var(--color-of-borders-and-corners);
+}
+
+.decorated-zone::after {
+  position: absolute;
+  content: '';
+  right: 10px;
+  top: 10px;
+  width: 25.04px;
+  height: 25px;
+  border-right: 1px solid var(--color-of-borders-and-corners);
+  border-top: 1px solid var(--color-of-borders-and-corners);
+}
+
+.heading {
+  justify-self: start;
+  font-weight: bold;
+  line-height: 0.825;
+  color: var(--header-and-footer-title-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  font-size: var(--heading-font-size-mobile);
+}
+
+.rec {
+  position: absolute;
+  display: flex;
+  align-self: center;
+  column-gap: 11px;
+  color: var(--accent-color);
+  right: 18px;
+  top: 10px;
+}
+
+.rec::after {
+  content: '';
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  align-self: center;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
+}
+
+/* footer {
+  position: relative;
+} */
+
+.header__theme-menu {
+  justify-self: end;
 }
