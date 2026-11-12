@@ -48,7 +48,8 @@
 
 .rec {
   position: absolute;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
   align-self: center;
   column-gap: 11px;
   color: var(--accent-color);
@@ -72,13 +73,13 @@
 }
 
 .header__theme-menu-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
   gap: 10px;
 }
 
 .header__theme-menu-button {
-  border: 1px solid transparent;
+  border: none;
   text-transform: lowercase;
   color: var(--button-color);
   background-color: transparent;
@@ -112,14 +113,14 @@
   line-height: 0.825;
   color: var(--header-title-color);
   text-shadow: 4px 4px 0 var(--accent-color);
-  max-inline-size: 100%; /* Защита от переполнения */
-  word-break: break-word; /* Разрешаем перенос длинных слов */
+  max-inline-size: 100%;
+  word-break: break-word;
 }
 
 .header__subtitle {
   justify-self: end;
   font-weight: var(--font-weight-bold);
-  max-inline-size: 100%; /* ИСПРАВЛЕНО: на мобилках не должно быть 364px */
+  max-inline-size: 100%;
 }
 
 .title-decor {
@@ -128,9 +129,9 @@
 }
 
 .content {
-  display: flex;
+  display: grid;
   padding: 40px 10px;
-  flex-direction: column;
+  grid-template-rows: auto auto auto;
   gap: 50px;
 }
 
@@ -159,8 +160,8 @@
 }
 
 .content__card {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: min-content auto;
   gap: 10px;
 }
 
@@ -420,7 +421,8 @@
   }
 
   .header__theme-menu-list {
-    flex-direction: row;
+    grid-template-rows: none;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .header__subtitle {
